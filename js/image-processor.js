@@ -3,9 +3,7 @@ import { getDimensions, PAPER_TYPES } from './battery-config.js';
 export function createTemplate(image, batteryType, columns, rows, showGuides, scaleToFit, paperType, includeOverlap) { 
     return new Promise((resolve, reject) => {
         var { widthPx: wrapWidth, heightPx: wrapHeight } = getDimensions(batteryType);
-        console.log(wrapHeight, includeOverlap)
         wrapHeight += includeOverlap ? wrapHeight * 0.125 : 0
-        console.log(wrapHeight)
     
         const paperSize = PAPER_TYPES[paperType]
         const maxCols = Math.floor(paperSize.widthPx / wrapWidth);
@@ -26,15 +24,15 @@ export function createTemplate(image, batteryType, columns, rows, showGuides, sc
 
         const gridWidth = columns * (wrapWidth);
         const gridHeight = rows * (wrapHeight);
-        const startX = (paperSize.widthPx - gridWidth)// / 2;
-        const startY = (paperSize.heightPx - gridHeight)// / 2;
-        const padX = (startX)//columns
-        const padY = (startY)//rows
+        const startX = (paperSize.widthPx - gridWidth);
+        const startY = (paperSize.heightPx - gridHeight);
+        const padX = (startX);
+        const padY = (startY);
 
         for (let col = 0; col < columns; col++) {
             for (let row = 0; row < rows; row++) {
-              var x = startX + col * wrapWidth// - (padX*columns);
-              var y = startY + row * wrapHeight// - (padY*rows);
+              var x = startX + col * wrapWidth
+              var y = startY + row * wrapHeight
               x -= (padX*0.95)
               x += col>0 ? (col*(padX/(columns-1)*0.9)) : 0
               y -= (padY*0.95)
@@ -66,6 +64,7 @@ function drawScaledImage(ctx, img, x, y, width, height, scaleToFit) {
     
     if (scaleToFit) {
       const scale = Math.min(width / img.width, height / img.height);
+
       drawWidth = img.width * scale;
       drawHeight = img.height * scale;
       dx = x + (width - drawWidth) / 2;
@@ -74,6 +73,7 @@ function drawScaledImage(ctx, img, x, y, width, height, scaleToFit) {
       //Crop
       const imgRatio = img.width / img.height;
       const targetRatio = width / height;
+
       if (imgRatio > targetRatio) {
         drawHeight = height;
         drawWidth = img.width * (height / img.height);
