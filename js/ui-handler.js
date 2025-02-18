@@ -4,7 +4,7 @@ import { getDimensions } from './battery-config.js';
 const errorEl = document.getElementById('error-message');
 const downloadLink = document.getElementById('download-link');
 
-async function handleGenerate() {
+export async function handleGenerate() {
     errorEl.style.display = 'none';
 
     const outputCanvas = document.getElementById('outputCanvas');
@@ -38,7 +38,7 @@ async function handleGenerate() {
     }
 }
 
-function onPaperSelect(value){
+export function onPaperSelect(value){
     if(value=='custom'){
 
     }
@@ -58,6 +58,3 @@ function showError(message) {
     errorEl.textContent = message;
     errorEl.style.display = 'block';
 }
-
-window.handleGenerate = handleGenerate;
-window.onPaperSelect = onPaperSelect;
