@@ -34,8 +34,3 @@ export function getDimensions(type) {
         heightPx: Math.round(battery.heightMm * MM_TO_INCH * DPI)
     };
 }
-
-export const PAPER = {
-    widthPx: 8.5 * DPI,
-    heightPx: 11 * DPI
-};
