@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Wrap Image Generator</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="container" id="mainDiv">
+        <h1>Battery Wrap Image Generator</h1>
+        <div class="center-text">
+            This tool automates the placement and scaling of custom battery art. <br>
+            Simply upload your picture, select the appropriate battery and paper type, and this tool will generate a
+            printable template sized to fit.
+        </div>
+        <br><br>
+        <div class="input-group">
+            <label for="columns">Columns</label>
+            <input type="number" id="columns" min="1" value="2">
+        </div>
+        <div class="input-group">
+            <label for="rows">Rows</label>
+            <input type="number" id="rows" min="1" value="2">
+        </div>
+        <div class="input-group">
+            <label for="image-upload">Upload Image</label>
+            <input type="file" id="image-upload" accept="image/*">
+        </div>
+        <div class="input-group">
+            <label>
+                Printing Size
+                <select id="paper-select">
+                    <option value="us-letter">Letter (8.5" x 11")</option>
+                    <option value="a4">A4 (8.3" x 11.69")</option>
+                </select>
+            </label>
+            <label>
+                Battery Type
+                <select id="battery-select">
+                    <option value='18650'>18650 (60mm x 65mm)</option>
+                    <option value='18350'>18350 (60mm x 35mm)</option>
+                    <option value='21700'>21700 (70.5mm x 70mm)</option>
+                </select>
+            </label>
+            <label>
+                <input type="checkbox" id="include-overlap" checked=true> Include Edge Overlap
+                <span class="tooltip">?
+                    <span class="tooltiptext">Add a few mm of extra height to overlap the top/bottom of the
+                        battery.</span>
+                </span>
+            </label>
+            <label>
+                <input type="checkbox" id="cutting-guides"> Show Cutting Guides
+            </label>
+            <label>
+                <input type="checkbox" id="scale-fit"> Scale To Fit
+            </label>
+        </div>
+        <button id="generate-btn">Generate Template</button>
+        <div id="error-message" class="error"></div>
+        <a id="download-link" style="display: none;">Download PNG</a>
+    </div>
+
+    <br>
+    <div class='container'>
+        <h2>Data Privacy</h2>
+        <ul>
+            <li>Your images are processed locally in your browser - nothing is uploaded.</li>
+            <li>No data is stored or saved after you leave this page.</li>
+        </ul>
+    </div>
+
+    <br>
+    <footer>
+        <a href="https://github.com/dannyi0/battery-wrap-generator">GitHub</a> | 
+        <a href="LICENSE.txt">MIT License</a> | 
+        Found a bug? <a href="https://github.com/dannyi0/battery-wrap-generator/issues">Open an issue</a>
+    </footer>
+
+    <script type="module">
+        import { handleGenerate, onPaperSelect } from '/js/ui-handler.js';
+        document.getElementById('generate-btn').addEventListener('click', handleGenerate);
+        document.getElementById('paper-select').addEventListener('onchange', onPaperSelect)
+    </script>
+</body>
+
+</html>
