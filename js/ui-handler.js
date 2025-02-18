@@ -1,5 +1,5 @@
+//TODO Clean this lil guy up..eventually
 import { createTemplate } from './image-processor.js';
-import { getDimensions } from './battery-config.js';
 
 const errorEl = document.getElementById('error-message');
 const downloadLink = document.getElementById('download-link');
@@ -38,12 +38,12 @@ export async function handleGenerate() {
     }
 }
 
+//TODO Custom paper sizes
 export function onPaperSelect(value){
     if(value=='custom'){
 
     }
 }
-
 
 function loadImage(file) {
     return new Promise((resolve, reject) => {
