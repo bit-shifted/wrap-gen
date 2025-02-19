@@ -8,6 +8,9 @@ Simply upload your picture, select the appropriate battery and paper type, and t
 - Compatible with US Letter and A4 paper sizes
 - Automatic scaling and positioning of artwork
 
+## Contributing
+Info on how to request features, report bugs, or contribute to the project can be found in the [Contributing Guidelines](https://github.com/bit-shifted/wrap-gen/blob/main/CONTRIBUTING.md)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
