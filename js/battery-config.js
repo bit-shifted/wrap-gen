@@ -18,7 +18,7 @@ export const BATTERY_TYPES = {
 
 export const PAPER_TYPES = {
     'us-letter': {
-        widthPx: 8.5 * DPI,
+        widthPx: 8.5 * DPI,   
         heightPx: 11 * DPI
     },
     'a4': {

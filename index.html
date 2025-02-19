@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Battery Wrap Image Generator</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -76,12 +76,12 @@
     <br>
     <footer>
         <a href="https://github.com/bit-shifted/wrap-gen">GitHub</a> | 
-        <a href="LICENSE.txt">MIT License</a> | 
+        <a href="./LICENSE.txt">MIT License</a> | 
         Found a bug? <a href="https://github.com/bit-shifted/wrap-gen/issues">Open an issue</a>
     </footer>
 
     <script type="module">
-        import { handleGenerate, onPaperSelect } from '/js/ui-handler.js';
+        import { handleGenerate, onPaperSelect } from './js/ui-handler.js';
         document.getElementById('generate-btn').addEventListener('click', handleGenerate);
         document.getElementById('paper-select').addEventListener('onchange', onPaperSelect)
     </script>
