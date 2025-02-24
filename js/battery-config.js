@@ -3,12 +3,12 @@ const MM_TO_INCH = 1 / 25.4;
 
 export const BATTERY_TYPES = {
     '18650': {
-        widthMm: 60,
+        widthMm: 58,
         heightMm: 65
     },
     '21700': {
-        widthMm: 71,
-        heightMm: 71
+        widthMm: 68,
+        heightMm: 70
     },
     '18350': {
         widthMm: 60,
