@@ -11,7 +11,7 @@ export const BATTERY_TYPES = {
         heightMm: 70
     },
     '18350': {
-        widthMm: 60,
+        widthMm: 58,
         heightMm: 35
     },
 };
